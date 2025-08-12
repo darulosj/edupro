@@ -42,7 +42,7 @@ function App() {
             </nav>
             <div className="flex items-center space-x-4">
               <Phone className="h-5 w-5 text-blue-600" />
-              <span className="text-sm font-medium text-gray-900">1-800-EDU-HELP</span>
+              <span className="text-sm font-medium text-gray-900">+1 (856) 647-3520</span>
             </div>
           </div>
         </div>
@@ -72,8 +72,9 @@ function App() {
                   Get Started Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
-                <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-                  Free Consultation
+                <button className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors flex items-center justify-center">
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  WhatsApp Chat
                 </button>
               </div>
               <div className="flex items-center space-x-6 text-sm text-gray-600">
@@ -405,8 +406,9 @@ function App() {
             <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl">
               Get Started Today
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all transform hover:scale-105 backdrop-blur-sm">
-              Chat with Expert
+            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all transform hover:scale-105 backdrop-blur-sm flex items-center justify-center">
+              <MessageCircle className="mr-2 h-5 w-5" />
+              WhatsApp Expert
             </button>
           </div>
         </div>
@@ -467,15 +469,15 @@ function App() {
               <div className="space-y-2 text-gray-400">
                 <div className="flex items-center">
                   <Phone className="h-4 w-4 mr-2" />
-                  1-800-EDU-HELP
+                  +1 (856) 647-3520
                 </div>
                 <div className="flex items-center">
                   <Mail className="h-4 w-4 mr-2" />
                   support@eduassistpro.com
                 </div>
                 <div className="flex items-center">
-                  <Clock className="h-4 w-4 mr-2" />
-                  24/7 Available
+                  <MessageCircle className="h-4 w-4 mr-2" />
+                  WhatsApp 24/7
                 </div>
               </div>
             </div>

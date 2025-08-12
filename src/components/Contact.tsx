@@ -81,9 +81,9 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">Phone Support</h4>
-                  <p className="text-gray-600 mb-2">Call us for immediate assistance</p>
-                  <p className="text-blue-600 font-semibold">1-800-EDU-HELP</p>
-                  <p className="text-sm text-gray-500">Available 24/7</p>
+                  <p className="text-gray-600 mb-2">WhatsApp us for immediate assistance</p>
+                  <p className="text-blue-600 font-semibold">+1 (856) 647-3520</p>
+                  <p className="text-sm text-gray-500">WhatsApp Available 24/7</p>
                 </div>
               </div>
 
@@ -100,14 +100,14 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="flex items-start">
-                <div className="bg-purple-100 p-3 rounded-lg mr-4">
-                  <MessageCircle className="h-6 w-6 text-purple-600" />
+                <div className="bg-green-100 p-3 rounded-lg mr-4">
+                  <MessageCircle className="h-6 w-6 text-green-600" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-1">Live Chat</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-1">WhatsApp Chat</h4>
                   <p className="text-gray-600 mb-2">Chat with our support team instantly</p>
-                  <p className="text-purple-600 font-semibold">Available on website</p>
-                  <p className="text-sm text-gray-500">Average response: 30 seconds</p>
+                  <p className="text-green-600 font-semibold">+1 (856) 647-3520</p>
+                  <p className="text-sm text-gray-500">Preferred contact method</p>
                 </div>
               </div>
 
@@ -126,14 +126,15 @@ const Contact: React.FC = () => {
 
             {/* Emergency Contact */}
             <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-              <h4 className="text-lg font-semibold text-red-800 mb-2">Urgent Assignment Help</h4>
+              <h4 className="text-lg font-semibold text-red-800 mb-2">Urgent Assignment Help - WhatsApp</h4>
               <p className="text-red-700 mb-3">Need help with a deadline in less than 24 hours?</p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <button className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
-                  Call Emergency Line
+                <button className="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center">
+                  <MessageCircle className="mr-2 h-4 w-4" />
+                  WhatsApp Now
                 </button>
-                <button className="border border-red-600 text-red-600 px-4 py-2 rounded-lg font-semibold hover:bg-red-50 transition-colors">
-                  Priority Chat
+                <button className="border border-green-600 text-green-600 px-4 py-2 rounded-lg font-semibold hover:bg-green-50 transition-colors">
+                  +1 (856) 647-3520
                 </button>
               </div>
             </div>
@@ -258,13 +259,14 @@ const Contact: React.FC = () => {
             Don't wait for email responses. Get instant support through our preferred contact methods.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center">
-              <Phone className="mr-2 h-5 w-5" />
-              Call Now: 1-800-EDU-HELP
-            </button>
-            <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors flex items-center justify-center">
+            <button className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center">
+            <button className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center">
               <MessageCircle className="mr-2 h-5 w-5" />
-              Start Live Chat
+              WhatsApp: +1 (856) 647-3520
+            </button>
+            <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors flex items-center justify-center">
+            <button className="border-2 border-green-600 text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors">
+              Start WhatsApp Chat
             </button>
           </div>
         </div>

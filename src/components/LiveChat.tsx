@@ -66,9 +66,9 @@ const LiveChat: React.FC = () => {
     } else if (message.includes('subject')) {
       return "We cover virtually all subjects including Mathematics, Science, English, History, Business, Psychology, Nursing, Computer Science, and many more. What subject do you need help with?";
     } else if (message.includes('urgent') || message.includes('rush')) {
-      return "Yes, we specialize in urgent assignments! We can deliver quality work within 24 hours or even shorter timeframes. Rush orders are handled by our most experienced tutors with priority support.";
+      return "Yes, we specialize in urgent assignments! We can deliver quality work within 24 hours or even shorter timeframes. For fastest response, contact us on WhatsApp at +1 (856) 647-3520.";
     } else {
-      return "Thank you for your message! I'm here to help with any questions about our services. You can also call us at 1-800-EDU-HELP or request a callback. How else can I assist you today?";
+      return "Thank you for your message! I'm here to help with any questions about our services. For fastest response, contact us on WhatsApp at +1 (856) 647-3520. How else can I assist you today?";
     }
   };
 
