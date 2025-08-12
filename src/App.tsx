@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTheme } from './contexts/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
 import FAQ from './components/FAQ';
@@ -11,6 +11,7 @@ import Guarantees from './components/Guarantees';
 import GetStartedModal from './components/GetStartedModal';
 import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import ThankYouPage from './components/ThankYouPage';
 import { 
   BookOpen, 
   Users, 
@@ -28,10 +29,21 @@ import {
 } from 'lucide-react';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('home');
   const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
   const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
   const { isDark } = useTheme();
+
+  useEffect(() => {
+    // Check URL for thank-you page
+    const path = window.location.pathname;
+    if (path === '/thank-you' || path === '/contact-success') {
+      setCurrentPage('thank-you');
+    } else {
+      setCurrentPage('home');
+    }
+  }, []);
 
   const handleWhatsAppClick = () => {
     window.open('https://wa.me/18566473520?text=Hi! I need help with my academic work. Can you provide more information about your services?', '_blank');
@@ -47,6 +59,15 @@ function App() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  // Show thank you page if that's the current page
+  if (currentPage === 'thank-you') {
+    return (
+      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+        <ThankYouPage />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">

@@ -50,14 +50,8 @@ const Contact: React.FC = () => {
         subject: formData.subject,
         message: formData.message
       });
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
+      // Redirect to thank you page
+      window.location.href = '/contact-success';
     } catch (error) {
       setSubmitStatus('error');
       const errorMsg = error instanceof Error ? error.message : 'Failed to send message. Please try again.';
@@ -158,13 +152,6 @@ const Contact: React.FC = () => {
           {/* Contact Form */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
-
-            {submitStatus === 'success' && (
-              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center">
-                <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
-                <span className="text-green-800">Thank you! We'll get back to you within 2 hours.</span>
-              </div>
-            )}
 
             {submitStatus === 'error' && (
               <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center">

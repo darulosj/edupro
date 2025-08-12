@@ -46,16 +46,8 @@ const QuoteForm: React.FC = () => {
 
     try {
       await insertClient(formData as Omit<Client, 'id' | 'created_at' | 'updated_at'>);
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        academic_level: '',
-        deadline: '',
-        message: ''
-      });
+      // Redirect to thank you page
+      window.location.href = '/thank-you';
     } catch (error) {
       setSubmitStatus('error');
       const errorMsg = error instanceof Error ? error.message : 'Failed to submit form. Please try again.';
@@ -72,13 +64,6 @@ const QuoteForm: React.FC = () => {
         <h3 className="text-2xl font-bold text-gray-900 mb-2">Get Your Free Quote</h3>
         <p className="text-gray-600">Tell us about your project and get instant pricing</p>
       </div>
-
-      {submitStatus === 'success' && (
-        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center">
-          <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
-          <span className="text-green-800">Thank you! We'll contact you within 24 hours with your quote.</span>
-        </div>
-      )}
 
       {submitStatus === 'error' && (
         <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center">

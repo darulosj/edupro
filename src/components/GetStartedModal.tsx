@@ -48,8 +48,9 @@ const GetStartedModal: React.FC<GetStartedModalProps> = ({ isOpen, onClose }) =>
 
     try {
       await insertClient(formData as Omit<Client, 'id' | 'created_at' | 'updated_at'>);
-      setSubmitStatus('success');
-      setStep(4);
+      // Close modal and redirect to thank you page
+      onClose();
+      window.location.href = '/thank-you';
     } catch (error) {
       setSubmitStatus('error');
       console.error('Form submission error:', error);
