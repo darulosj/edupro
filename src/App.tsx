@@ -1,10 +1,12 @@
 import React from 'react';
+import { useState } from 'react';
 import FAQ from './components/FAQ';
 import LiveChat from './components/LiveChat';
 import QuoteForm from './components/QuoteForm';
 import About from './components/About';
 import Contact from './components/Contact';
 import Guarantees from './components/Guarantees';
+import GetStartedModal from './components/GetStartedModal';
 import { 
   BookOpen, 
   Users, 
@@ -22,6 +24,23 @@ import {
 } from 'lucide-react';
 
 function App() {
+  const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
+
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/18566473520?text=Hi! I need help with my academic work. Can you provide more information about your services?', '_blank');
+  };
+
+  const handleGetStartedClick = () => {
+    setIsGetStartedModalOpen(true);
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -33,12 +52,12 @@ function App() {
               <span className="text-2xl font-bold text-gray-900">EduAssist Pro</span>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
-              <a href="#guarantees" className="text-gray-700 hover:text-blue-600 transition-colors">Guarantees</a>
-              <a href="#faq" className="text-gray-700 hover:text-blue-600 transition-colors">FAQ</a>
-              <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">Reviews</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+              <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-blue-600 transition-colors">Services</button>
+              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors">About</button>
+              <button onClick={() => scrollToSection('guarantees')} className="text-gray-700 hover:text-blue-600 transition-colors">Guarantees</button>
+              <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-blue-600 transition-colors">FAQ</button>
+              <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-blue-600 transition-colors">Reviews</button>
+              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 transition-colors">Contact</button>
             </nav>
             <div className="flex items-center space-x-4">
               <Phone className="h-5 w-5 text-blue-600" />
@@ -68,11 +87,17 @@ function App() {
                 Our certified tutors ensure you achieve the grades you deserve while maintaining academic integrity.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center">
+                <button 
+                  onClick={handleGetStartedClick}
+                  className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center"
+                >
                   Get Started Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
-                <button className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors flex items-center justify-center">
+                <button 
+                  onClick={handleWhatsAppClick}
+                  className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors flex items-center justify-center"
+                >
                   <MessageCircle className="mr-2 h-5 w-5" />
                   WhatsApp Chat
                 </button>
@@ -403,10 +428,16 @@ function App() {
             <div className="h-1 w-24 bg-white/30 rounded-full"></div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl">
+            <button 
+              onClick={handleGetStartedClick}
+              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl"
+            >
               Get Started Today
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all transform hover:scale-105 backdrop-blur-sm flex items-center justify-center">
+            <button 
+              onClick={handleWhatsAppClick}
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all transform hover:scale-105 backdrop-blur-sm flex items-center justify-center"
+            >
               <MessageCircle className="mr-2 h-5 w-5" />
               WhatsApp Expert
             </button>
@@ -449,19 +480,19 @@ function App() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Services</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Online Class Help</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Assignment Writing</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Exam Assistance</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Tutoring</a></li>
+                <li><button onClick={() => scrollToSection('services')} className="hover:text-white transition-colors">Online Class Help</button></li>
+                <li><button onClick={() => scrollToSection('services')} className="hover:text-white transition-colors">Assignment Writing</button></li>
+                <li><button onClick={() => scrollToSection('services')} className="hover:text-white transition-colors">Exam Assistance</button></li>
+                <li><button onClick={() => scrollToSection('services')} className="hover:text-white transition-colors">Tutoring</button></li>
               </ul>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4">Support</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
-                <li><a href="#contact" className="hover:text-white transition-colors">Live Chat</a></li>
-                <li><a href="#contact" className="hover:text-white transition-colors">Contact Us</a></li>
-                <li><a href="#guarantees" className="hover:text-white transition-colors">Guarantees</a></li>
+                <li><button onClick={() => scrollToSection('faq')} className="hover:text-white transition-colors">FAQ</button></li>
+                <li><button onClick={() => scrollToSection('contact')} className="hover:text-white transition-colors">Live Chat</button></li>
+                <li><button onClick={() => scrollToSection('contact')} className="hover:text-white transition-colors">Contact Us</button></li>
+                <li><button onClick={() => scrollToSection('guarantees')} className="hover:text-white transition-colors">Guarantees</button></li>
               </ul>
             </div>
             <div>
@@ -486,13 +517,19 @@ function App() {
             <div className="flex items-center justify-center mb-4">
               <div className="h-px w-20 bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
             </div>
-            <p>&copy; 2024 EduAssist Pro. All rights reserved. | <a href="#guarantees" className="hover:text-white transition-colors">Privacy Policy</a> | <a href="#guarantees" className="hover:text-white transition-colors">Terms of Service</a></p>
+            <p>&copy; 2024 EduAssist Pro. All rights reserved. | <button onClick={() => scrollToSection('guarantees')} className="hover:text-white transition-colors">Privacy Policy</button> | <button onClick={() => scrollToSection('guarantees')} className="hover:text-white transition-colors">Terms of Service</button></p>
           </div>
         </div>
       </footer>
       
       {/* Live Chat Widget */}
       <LiveChat />
+      
+      {/* Get Started Modal */}
+      <GetStartedModal 
+        isOpen={isGetStartedModalOpen} 
+        onClose={() => setIsGetStartedModalOpen(false)} 
+      />
     </div>
   );
 }

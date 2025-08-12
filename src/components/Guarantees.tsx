@@ -184,6 +184,14 @@ const Guarantees: React.FC = () => {
               <div className="text-blue-100">Average Rating</div>
             </div>
           </div>
+          <div className="mt-8 text-center">
+            <button 
+              onClick={() => window.open('https://wa.me/18566473520?text=Hi! I want to learn more about your guarantees and how they work.', '_blank')}
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
+              Contact Us About Our Guarantees
+            </button>
+          </div>
         </div>
       </div>
     </section>

@@ -129,11 +129,17 @@ const Contact: React.FC = () => {
               <h4 className="text-lg font-semibold text-red-800 mb-2">Urgent Assignment Help - WhatsApp</h4>
               <p className="text-red-700 mb-3">Need help with a deadline in less than 24 hours?</p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <button className="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center">
+                <button 
+                  onClick={() => window.open('https://wa.me/18566473520?text=Hi! I have an urgent assignment that needs help. Can you assist me?', '_blank')}
+                  className="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center"
+                >
                   <MessageCircle className="mr-2 h-4 w-4" />
                   WhatsApp Now
                 </button>
-                <button className="border border-green-600 text-green-600 px-4 py-2 rounded-lg font-semibold hover:bg-green-50 transition-colors">
+                <button 
+                  onClick={() => window.open('tel:+18566473520', '_blank')}
+                  className="border border-green-600 text-green-600 px-4 py-2 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+                >
                   +1 (856) 647-3520
                 </button>
               </div>
@@ -259,11 +265,17 @@ const Contact: React.FC = () => {
             Don't wait for email responses. Get instant support through our preferred contact methods.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center">
+            <button 
+              onClick={() => window.open('https://wa.me/18566473520?text=Hi! I need immediate help with my academic work. Can you assist me?', '_blank')}
+              className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center"
+            >
               <MessageCircle className="mr-2 h-5 w-5" />
               WhatsApp: +1 (856) 647-3520
             </button>
-            <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors flex items-center justify-center">
+            <button 
+              onClick={() => window.open('https://wa.me/18566473520', '_blank')}
+              className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors flex items-center justify-center"
+            >
               Start WhatsApp Chat
             </button>
           </div>

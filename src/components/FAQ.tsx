@@ -122,10 +122,16 @@ const FAQ: React.FC = () => {
               Can't find the answer you're looking for? Our support team is here to help 24/7.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+              <button 
+                onClick={() => window.open('https://wa.me/18566473520?text=Hi! I have some questions about your services. Can you help me?', '_blank')}
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              >
                 Live Chat Support
               </button>
-              <button className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+              <button 
+                onClick={() => window.location.href = 'mailto:support@eduassistpro.com?subject=Question about your services'}
+                className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+              >
                 Email Us
               </button>
             </div>
