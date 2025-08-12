@@ -260,12 +260,10 @@ const Contact: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center">
-            <button className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center">
               <MessageCircle className="mr-2 h-5 w-5" />
               WhatsApp: +1 (856) 647-3520
             </button>
-            <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors flex items-center justify-center">
-            <button className="border-2 border-green-600 text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors">
+            <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors flex items-center justify-center">
               Start WhatsApp Chat
             </button>
           </div>
