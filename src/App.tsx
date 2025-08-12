@@ -49,18 +49,18 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-5xl font-bold text-gray-900 mb-4 leading-tight mt-8">
                 Expert Academic Support for Your Success
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 Get professional help with your online classes, assignments, and exams. 
                 Our certified tutors ensure you achieve the grades you deserve while maintaining academic integrity.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center">
                   Get Started Now
                   <ArrowRight className="ml-2 h-5 w-5" />
