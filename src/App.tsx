@@ -194,7 +194,7 @@ function App() {
             </div>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div data-service="online-class" className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="bg-gradient-to-br from-blue-100 to-blue-200 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                 <BookOpen className="h-8 w-8 text-blue-600" />
               </div>
@@ -206,7 +206,7 @@ function App() {
                 <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" />Quiz completion</li>
               </ul>
             </div>
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div data-service="exam" className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="bg-gradient-to-br from-green-100 to-green-200 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                 <Target className="h-8 w-8 text-green-600" />
               </div>
@@ -218,7 +218,7 @@ function App() {
                 <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" />Live support</li>
               </ul>
             </div>
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div data-service="tutoring" className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="bg-gradient-to-br from-purple-100 to-purple-200 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                 <Users className="h-8 w-8 text-purple-600" />
               </div>
@@ -230,7 +230,7 @@ function App() {
                 <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" />Progress tracking</li>
               </ul>
             </div>
-            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div data-service="assignment" className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="bg-gradient-to-br from-orange-100 to-orange-200 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                 <Award className="h-8 w-8 text-orange-600" />
               </div>
@@ -480,17 +480,17 @@ function App() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Services</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><button onClick={() => scrollToSection('services')} className="hover:text-white transition-colors">Online Class Help</button></li>
-                <li><button onClick={() => scrollToSection('services')} className="hover:text-white transition-colors">Assignment Writing</button></li>
-                <li><button onClick={() => scrollToSection('services')} className="hover:text-white transition-colors">Exam Assistance</button></li>
-                <li><button onClick={() => scrollToSection('services')} className="hover:text-white transition-colors">Tutoring</button></li>
+                <li><button onClick={() => {scrollToSection('services'); window.setTimeout(() => {const element = document.querySelector('[data-service="online-class"]'); element?.scrollIntoView({behavior: 'smooth', block: 'center'});}, 500);}} className="hover:text-white transition-colors text-left">Online Class Help</button></li>
+                <li><button onClick={() => {scrollToSection('services'); window.setTimeout(() => {const element = document.querySelector('[data-service="assignment"]'); element?.scrollIntoView({behavior: 'smooth', block: 'center'});}, 500);}} className="hover:text-white transition-colors text-left">Assignment Writing</button></li>
+                <li><button onClick={() => {scrollToSection('services'); window.setTimeout(() => {const element = document.querySelector('[data-service="exam"]'); element?.scrollIntoView({behavior: 'smooth', block: 'center'});}, 500);}} className="hover:text-white transition-colors text-left">Exam Assistance</button></li>
+                <li><button onClick={() => {scrollToSection('services'); window.setTimeout(() => {const element = document.querySelector('[data-service="tutoring"]'); element?.scrollIntoView({behavior: 'smooth', block: 'center'});}, 500);}} className="hover:text-white transition-colors text-left">Tutoring</button></li>
               </ul>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4">Support</h3>
               <ul className="space-y-2 text-gray-400">
                 <li><button onClick={() => scrollToSection('faq')} className="hover:text-white transition-colors">FAQ</button></li>
-                <li><button onClick={() => scrollToSection('contact')} className="hover:text-white transition-colors">Live Chat</button></li>
+                <li><button onClick={() => window.open('https://wa.me/18566473520?text=Hi! I need help with my academic work. Can you provide more information about your services?', '_blank')} className="hover:text-white transition-colors text-left">Live Chat</button></li>
                 <li><button onClick={() => scrollToSection('contact')} className="hover:text-white transition-colors">Contact Us</button></li>
                 <li><button onClick={() => scrollToSection('guarantees')} className="hover:text-white transition-colors">Guarantees</button></li>
               </ul>
@@ -498,18 +498,18 @@ function App() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
               <div className="space-y-2 text-gray-400">
-                <div className="flex items-center">
+                <button onClick={() => window.open('tel:+18566473520', '_blank')} className="flex items-center hover:text-white transition-colors text-left">
                   <Phone className="h-4 w-4 mr-2" />
                   +1 (856) 647-3520
-                </div>
-                <div className="flex items-center">
+                </button>
+                <button onClick={() => window.open('mailto:support@eduassistpro.com?subject=Inquiry about your services', '_blank')} className="flex items-center hover:text-white transition-colors text-left">
                   <Mail className="h-4 w-4 mr-2" />
                   support@eduassistpro.com
-                </div>
-                <div className="flex items-center">
+                </button>
+                <button onClick={() => window.open('https://wa.me/18566473520?text=Hi! I need help with my academic work. Can you assist me?', '_blank')} className="flex items-center hover:text-white transition-colors text-left">
                   <MessageCircle className="h-4 w-4 mr-2" />
                   WhatsApp 24/7
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -517,7 +517,7 @@ function App() {
             <div className="flex items-center justify-center mb-4">
               <div className="h-px w-20 bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
             </div>
-            <p>&copy; 2024 EduAssist Pro. All rights reserved. | <button onClick={() => scrollToSection('guarantees')} className="hover:text-white transition-colors">Privacy Policy</button> | <button onClick={() => scrollToSection('guarantees')} className="hover:text-white transition-colors">Terms of Service</button></p>
+            <p>&copy; 2024 EduAssist Pro. All rights reserved. | <button onClick={() => window.open('https://wa.me/18566473520?text=Hi! I would like to know more about your privacy policy and how you protect customer data.', '_blank')} className="hover:text-white transition-colors">Privacy Policy</button> | <button onClick={() => window.open('https://wa.me/18566473520?text=Hi! I would like to review your terms of service. Can you provide more information?', '_blank')} className="hover:text-white transition-colors">Terms of Service</button></p>
           </div>
         </div>
       </footer>
