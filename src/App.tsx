@@ -49,7 +49,14 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
+      <section className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 py-16 relative overflow-hidden">
+        {/* Background Art */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-blue-400 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-purple-400 rounded-full blur-lg"></div>
+          <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-indigo-400 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-10 right-10 w-28 h-28 bg-blue-300 rounded-full blur-lg"></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
@@ -92,22 +99,45 @@ function App() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white relative">
+        {/* Decorative Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-br from-blue-100 to-transparent rounded-full opacity-30"></div>
+          <div className="absolute -bottom-4 -right-4 w-72 h-72 bg-gradient-to-tl from-indigo-100 to-transparent rounded-full opacity-30"></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+              <Award className="h-8 w-8 text-blue-600" />
+            </div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Trusted by Students Worldwide</h2>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
+              <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <Users className="h-8 w-8 text-white" />
+              </div>
               <div className="text-4xl font-bold text-blue-600 mb-2">15,000+</div>
               <div className="text-gray-600">Students Helped</div>
             </div>
             <div>
+              <div className="bg-gradient-to-br from-green-500 to-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <CheckCircle className="h-8 w-8 text-white" />
+              </div>
               <div className="text-4xl font-bold text-blue-600 mb-2">98%</div>
               <div className="text-gray-600">Success Rate</div>
             </div>
             <div>
+              <div className="bg-gradient-to-br from-purple-500 to-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <GraduationCap className="h-8 w-8 text-white" />
+              </div>
               <div className="text-4xl font-bold text-blue-600 mb-2">500+</div>
               <div className="text-gray-600">Expert Tutors</div>
             </div>
             <div>
+              <div className="bg-gradient-to-br from-orange-500 to-orange-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <Clock className="h-8 w-8 text-white" />
+              </div>
               <div className="text-4xl font-bold text-blue-600 mb-2">24/7</div>
               <div className="text-gray-600">Support Available</div>
             </div>
@@ -116,17 +146,32 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
+      <section id="services" className="py-20 bg-gray-50 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234F46E5' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full mb-6 shadow-xl">
+              <BookOpen className="h-10 w-10 text-white" />
+            </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive academic support tailored to your needs
             </p>
+            {/* Decorative Line */}
+            <div className="flex items-center justify-center mt-6">
+              <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full"></div>
+            </div>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <BookOpen className="h-12 w-12 text-blue-600 mb-4" />
+              <div className="bg-gradient-to-br from-blue-100 to-blue-200 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                <BookOpen className="h-8 w-8 text-blue-600" />
+              </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Online Class Help</h3>
               <p className="text-gray-600 mb-4">Complete online course management including assignments, discussions, and quizzes.</p>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -136,7 +181,9 @@ function App() {
               </ul>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <Target className="h-12 w-12 text-blue-600 mb-4" />
+              <div className="bg-gradient-to-br from-green-100 to-green-200 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                <Target className="h-8 w-8 text-green-600" />
+              </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Exam Assistance</h3>
               <p className="text-gray-600 mb-4">Expert help with midterms, finals, and standardized tests to ensure top performance.</p>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -146,7 +193,9 @@ function App() {
               </ul>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <Users className="h-12 w-12 text-blue-600 mb-4" />
+              <div className="bg-gradient-to-br from-purple-100 to-purple-200 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                <Users className="h-8 w-8 text-purple-600" />
+              </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Tutoring Services</h3>
               <p className="text-gray-600 mb-4">One-on-one tutoring sessions with subject matter experts.</p>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -156,7 +205,9 @@ function App() {
               </ul>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <Award className="h-12 w-12 text-blue-600 mb-4" />
+              <div className="bg-gradient-to-br from-orange-100 to-orange-200 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                <Award className="h-8 w-8 text-orange-600" />
+              </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Assignment Help</h3>
               <p className="text-gray-600 mb-4">Professional assistance with essays, research papers, and projects.</p>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -166,7 +217,9 @@ function App() {
               </ul>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <Clock className="h-12 w-12 text-blue-600 mb-4" />
+              <div className="bg-gradient-to-br from-red-100 to-red-200 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                <Clock className="h-8 w-8 text-red-600" />
+              </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Urgent Help</h3>
               <p className="text-gray-600 mb-4">Last-minute assistance for tight deadlines and emergency situations.</p>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -176,7 +229,9 @@ function App() {
               </ul>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <Shield className="h-12 w-12 text-blue-600 mb-4" />
+              <div className="bg-gradient-to-br from-indigo-100 to-indigo-200 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                <Shield className="h-8 w-8 text-indigo-600" />
+              </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Proctored Exams</h3>
               <p className="text-gray-600 mb-4">Secure assistance with proctored examinations and assessments.</p>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -193,32 +248,44 @@ function App() {
       <About />
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Artistic Background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50/30 via-transparent to-purple-50/30"></div>
+          <div className="absolute top-20 right-10 w-64 h-64 bg-gradient-to-br from-blue-200/20 to-indigo-200/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-tr from-purple-200/20 to-pink-200/20 rounded-full blur-3xl"></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full mb-6 shadow-xl">
+              <Star className="h-10 w-10 text-white" />
+            </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose EduAssist Pro?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We're committed to your academic success with proven results
             </p>
+            <div className="flex items-center justify-center mt-6">
+              <div className="h-1 w-24 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></div>
+            </div>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Award className="h-10 w-10 text-blue-600" />
+              <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl transform hover:scale-105 transition-transform">
+                <Award className="h-10 w-10 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Expert Tutors</h3>
               <p className="text-gray-600">PhD-qualified professionals with years of teaching experience in their respective fields.</p>
             </div>
             <div className="text-center">
-              <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="h-10 w-10 text-green-600" />
+              <div className="bg-gradient-to-br from-green-500 to-green-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl transform hover:scale-105 transition-transform">
+                <Shield className="h-10 w-10 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">100% Confidential</h3>
               <p className="text-gray-600">Your privacy is our priority. All interactions and information are kept strictly confidential.</p>
             </div>
             <div className="text-center">
-              <div className="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Clock className="h-10 w-10 text-purple-600" />
+              <div className="bg-gradient-to-br from-purple-500 to-purple-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl transform hover:scale-105 transition-transform">
+                <Clock className="h-10 w-10 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">On-Time Delivery</h3>
               <p className="text-gray-600">We guarantee timely completion of all assignments and projects before your deadline.</p>
@@ -228,14 +295,26 @@ function App() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="py-20 bg-gray-50">
+      <section id="testimonials" className="py-20 bg-gray-50 relative overflow-hidden">
+        {/* Background Art */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-yellow-100/40 via-orange-100/20 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-100/40 via-indigo-100/20 to-transparent rounded-full blur-3xl"></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full mb-6 shadow-xl">
+              <Star className="h-10 w-10 text-white" />
+            </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Students Say</h2>
             <p className="text-xl text-gray-600">Real feedback from satisfied students</p>
+            <div className="flex items-center justify-center mt-6">
+              <div className="h-1 w-24 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full"></div>
+            </div>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-8 shadow-lg">
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-20"></div>
               <div className="flex items-center mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
@@ -243,7 +322,7 @@ function App() {
               </div>
               <p className="text-gray-600 mb-6">"EduAssist Pro helped me maintain my GPA while working full-time. Their tutors are incredibly knowledgeable and supportive."</p>
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4 shadow-lg">
                   S
                 </div>
                 <div>
@@ -252,7 +331,8 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-xl p-8 shadow-lg">
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full opacity-20"></div>
               <div className="flex items-center mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
@@ -260,7 +340,7 @@ function App() {
               </div>
               <p className="text-gray-600 mb-6">"The quality of work is exceptional. I went from failing to getting A's in my statistics course. Highly recommend!"</p>
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4 shadow-lg">
                   M
                 </div>
                 <div>
@@ -269,7 +349,8 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-xl p-8 shadow-lg">
+            <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-20"></div>
               <div className="flex items-center mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
@@ -277,7 +358,7 @@ function App() {
               </div>
               <p className="text-gray-600 mb-6">"Professional, reliable, and always delivers on time. They saved my semester when I was overwhelmed with coursework."</p>
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4 shadow-lg">
                   A
                 </div>
                 <div>
@@ -300,17 +381,31 @@ function App() {
       <Contact />
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600">
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 relative overflow-hidden">
+        {/* Artistic Background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-white/5 rounded-full blur-lg"></div>
+          <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-10 right-10 w-28 h-28 bg-white/5 rounded-full blur-lg"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-y-6"></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full mb-6 shadow-xl">
+            <GraduationCap className="h-10 w-10 text-white" />
+          </div>
           <h2 className="text-4xl font-bold text-white mb-4">Ready to Boost Your Grades?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
             Join thousands of successful students who trust EduAssist Pro for their academic needs
           </p>
+          <div className="flex items-center justify-center mb-8">
+            <div className="h-1 w-24 bg-white/30 rounded-full"></div>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl">
               Get Started Today
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all transform hover:scale-105 backdrop-blur-sm">
               Chat with Expert
             </button>
           </div>
@@ -318,21 +413,35 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 relative overflow-hidden">
+        {/* Footer Background Art */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500"></div>
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-blue-900/20 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-purple-900/20 to-transparent rounded-full blur-2xl"></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <GraduationCap className="h-8 w-8 text-blue-400" />
+                <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-2 rounded-lg">
+                  <GraduationCap className="h-6 w-6 text-white" />
+                </div>
                 <span className="text-2xl font-bold">EduAssist Pro</span>
               </div>
               <p className="text-gray-400 mb-4">
                 Your trusted partner in academic success. Professional tutoring and assignment help available 24/7.
               </p>
               <div className="flex space-x-4">
-                <Phone className="h-5 w-5 text-blue-400" />
-                <Mail className="h-5 w-5 text-blue-400" />
-                <MessageCircle className="h-5 w-5 text-blue-400" />
+                <div className="bg-blue-600/20 p-2 rounded-lg hover:bg-blue-600/30 transition-colors cursor-pointer">
+                  <Phone className="h-4 w-4 text-blue-400" />
+                </div>
+                <div className="bg-blue-600/20 p-2 rounded-lg hover:bg-blue-600/30 transition-colors cursor-pointer">
+                  <Mail className="h-4 w-4 text-blue-400" />
+                </div>
+                <div className="bg-blue-600/20 p-2 rounded-lg hover:bg-blue-600/30 transition-colors cursor-pointer">
+                  <MessageCircle className="h-4 w-4 text-blue-400" />
+                </div>
               </div>
             </div>
             <div>
@@ -371,7 +480,10 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+          <div className="border-t border-gray-700/50 mt-12 pt-8 text-center text-gray-400">
+            <div className="flex items-center justify-center mb-4">
+              <div className="h-px w-20 bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+            </div>
             <p>&copy; 2024 EduAssist Pro. All rights reserved. | <a href="#guarantees" className="hover:text-white transition-colors">Privacy Policy</a> | <a href="#guarantees" className="hover:text-white transition-colors">Terms of Service</a></p>
           </div>
         </div>
