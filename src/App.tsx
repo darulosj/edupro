@@ -525,7 +525,6 @@ function App() {
             <div className="flex items-center justify-center mb-4">
               <div className="h-px w-20 bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
             </div>
-            <p>&copy; 2024 EduAssist Pro. All rights reserved. | <button onClick={() => window.open('https://wa.me/18566473520?text=Hi! I would like to know more about your privacy policy and how you protect customer data.', '_blank')} className="hover:text-white dark:hover:text-gray-200 transition-colors">Privacy Policy</button> | <button onClick={() => window.open('https://wa.me/18566473520?text=Hi! I would like to review your terms of service. Can you provide more information?', \'_blank')} className="hover:text-white dark:hover:text-gray-200 transition-colors">Terms of Service</button></p>
             <p>&copy; 2024 EduAssist Pro. All rights reserved. | <button onClick={() => setIsPrivacyModalOpen(true)} className="hover:text-white transition-colors">Privacy Policy</button> | <button onClick={() => setIsTermsModalOpen(true)} className="hover:text-white transition-colors">Terms of Service</button></p>
           </div>
         </div>
