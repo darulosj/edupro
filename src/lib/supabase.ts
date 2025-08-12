@@ -1,13 +1,18 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables');
-}
+// Create a mock client if environment variables are missing
+const createSupabaseClient = () => {
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.warn('Supabase environment variables not found. Using mock client.');
+    return null;
+  }
+  return createClient(supabaseUrl, supabaseAnonKey);
+};
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = createSupabaseClient();
 
 // Types for our database
 export interface Client {
@@ -25,6 +30,14 @@ export interface Client {
 
 // Database functions
 export const insertClient = async (clientData: Omit<Client, 'id' | 'created_at' | 'updated_at'>) => {
+  // If Supabase is not configured, simulate success for demo purposes
+  if (!supabase) {
+    console.log('Demo mode: Form data would be saved:', clientData);
+    // Simulate API delay
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    return [{ id: 'demo-' + Date.now(), ...clientData }];
+  }
+
   const { data, error } = await supabase
     .from('clients')
     .insert([clientData])
@@ -39,6 +52,11 @@ export const insertClient = async (clientData: Omit<Client, 'id' | 'created_at' 
 };
 
 export const getClients = async () => {
+  if (!supabase) {
+    console.log('Demo mode: No clients to fetch');
+    return [];
+  }
+
   const { data, error } = await supabase
     .from('clients')
     .select('*')
@@ -53,6 +71,11 @@ export const getClients = async () => {
 };
 
 export const getClientByEmail = async (email: string) => {
+  if (!supabase) {
+    console.log('Demo mode: No client found for email:', email);
+    return null;
+  }
+
   const { data, error } = await supabase
     .from('clients')
     .select('*')

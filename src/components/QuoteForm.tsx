@@ -33,8 +33,16 @@ const QuoteForm: React.FC = () => {
       return;
     }
 
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus('error');
+      setErrorMessage('Please enter a valid email address');
+      return;
+    }
     setIsSubmitting(true);
     setSubmitStatus('idle');
+    setErrorMessage('');
 
     try {
       await insertClient(formData as Omit<Client, 'id' | 'created_at' | 'updated_at'>);
@@ -50,7 +58,8 @@ const QuoteForm: React.FC = () => {
       });
     } catch (error) {
       setSubmitStatus('error');
-      setErrorMessage('Failed to submit form. Please try again.');
+      const errorMsg = error instanceof Error ? error.message : 'Failed to submit form. Please try again.';
+      setErrorMessage(errorMsg);
       console.error('Form submission error:', error);
     } finally {
       setIsSubmitting(false);

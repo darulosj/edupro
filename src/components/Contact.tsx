@@ -31,8 +31,16 @@ const Contact: React.FC = () => {
       return;
     }
 
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus('error');
+      setErrorMessage('Please enter a valid email address');
+      return;
+    }
     setIsSubmitting(true);
     setSubmitStatus('idle');
+    setErrorMessage('');
 
     try {
       await insertClient({
@@ -52,7 +60,8 @@ const Contact: React.FC = () => {
       });
     } catch (error) {
       setSubmitStatus('error');
-      setErrorMessage('Failed to send message. Please try again.');
+      const errorMsg = error instanceof Error ? error.message : 'Failed to send message. Please try again.';
+      setErrorMessage(errorMsg);
       console.error('Contact form submission error:', error);
     } finally {
       setIsSubmitting(false);
