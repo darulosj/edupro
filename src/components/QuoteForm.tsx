@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
 import { insertClient, type Client } from '../lib/supabase';
+import { trackQuoteRequest } from '../lib/analytics';
 
 const QuoteForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -46,6 +47,8 @@ const QuoteForm: React.FC = () => {
 
     try {
       await insertClient(formData as Omit<Client, 'id' | 'created_at' | 'updated_at'>);
+      // Track conversion
+      trackQuoteRequest(formData);
       // Redirect to thank you page
       window.location.href = '/thank-you';
     } catch (error) {

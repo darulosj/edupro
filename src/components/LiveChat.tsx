@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { MessageCircle, X, ExternalLink } from 'lucide-react';
+import { trackWhatsAppClick } from '../lib/analytics';
 
 const LiveChat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleWhatsAppClick = () => {
+    trackWhatsAppClick('live_chat_widget');
     window.open('https://wa.me/18566473520?text=Hi! I need help with my academic work. Can you assist me?', '_blank');
     setIsOpen(false); // Close the widget after redirecting
   };

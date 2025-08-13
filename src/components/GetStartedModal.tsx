@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle, BookOpen, Users, Award, Clock } from 'lucide-react';
 import { insertClient, type Client } from '../lib/supabase';
+import { trackQuoteRequest } from '../lib/analytics';
 
 interface GetStartedModalProps {
   isOpen: boolean;
@@ -48,6 +49,8 @@ const GetStartedModal: React.FC<GetStartedModalProps> = ({ isOpen, onClose }) =>
 
     try {
       await insertClient(formData as Omit<Client, 'id' | 'created_at' | 'updated_at'>);
+      // Track conversion
+      trackQuoteRequest(formData);
       // Close modal and redirect to thank you page
       onClose();
       window.location.href = '/thank-you';

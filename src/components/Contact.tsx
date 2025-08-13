@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MessageCircle, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { insertClient, type Client } from '../lib/supabase';
+import { trackContactSubmission } from '../lib/analytics';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -50,6 +51,8 @@ const Contact: React.FC = () => {
         subject: formData.subject,
         message: formData.message
       });
+      // Track conversion
+      trackContactSubmission(formData);
       // Redirect to thank you page
       window.location.href = '/contact-success';
     } catch (error) {

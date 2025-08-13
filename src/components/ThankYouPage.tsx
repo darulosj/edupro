@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react';
 import { CheckCircle, ArrowRight, MessageCircle, Phone, Mail, Clock, Award, Users } from 'lucide-react';
+import { trackThankYouPageView, trackWhatsAppClick, trackPhoneCall } from '../lib/analytics';
 
 const ThankYouPage: React.FC = () => {
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
+    // Track thank you page view
+    trackThankYouPageView('quote_request');
   }, []);
 
   const handleWhatsAppClick = () => {
+    trackWhatsAppClick('thank_you_page');
     window.open('https://wa.me/18566473520?text=Hi! I just submitted a quote request and wanted to follow up.', '_blank');
   };
 

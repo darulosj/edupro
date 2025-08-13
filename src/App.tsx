@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useTheme } from './contexts/ThemeContext';
+import { trackWhatsAppClick, trackPhoneCall, trackServiceInterest } from './lib/analytics';
 import ThemeToggle from './components/ThemeToggle';
 import FAQ from './components/FAQ';
 import LiveChat from './components/LiveChat';
@@ -46,6 +47,7 @@ function App() {
   }, []);
 
   const handleWhatsAppClick = () => {
+    trackWhatsAppClick('hero_section');
     window.open('https://wa.me/18566473520?text=Hi! I need help with my academic work. Can you provide more information about your services?', '_blank');
   };
 
